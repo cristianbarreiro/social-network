@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed - Social Network</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar will be inserted here by JavaScript -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container">
+        <div class="feed-container">
+            <div class="create-post">
+                <h2>Crear Publicación</h2>
+                <form id="postForm" class="post-form">
+                    <div class="form-group">
+                        <textarea id="postContent" placeholder="¿Qué estás pensando?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Publicar</button>
+                </form>
+            </div>
+
+            <div id="posts-container" class="posts-container">
+                <!-- Posts will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
