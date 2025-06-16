@@ -32,7 +32,7 @@ body {
 /*         CONTAINER        */
 /* ------------------------- */
 .index-container {
-  margin-top: 135px; /* Ajusta según la altura real de tu navbar */
+  margin-top: 125px; /* Ajusta según la altura real de tu navbar */
   display: flex;
   flex-direction: row; /* fila en vez de columna */
   align-items: flex-start; /* alinea arriba */
@@ -42,7 +42,7 @@ body {
 }
 
 .register-container {
-  margin-top: 40px; /* Ajusta según necesidad */
+  margin-top: 46px; /* Ajusta según necesidad */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +114,6 @@ i {
 /* ------------------------- */
 .main-nav {
   background: #464655;
-  height: 0;
   left: 0;
   overflow: hidden;
   position: absolute;
@@ -205,7 +204,6 @@ i {
   .main-nav {
     background: transparent;
     float: right;
-    height: auto;
     position: relative;
   }
 
@@ -237,12 +235,14 @@ i {
 /* ------------------------- */
 .auth-box {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
-  max-width: 400px;
-  width: 300px;
+  width: 400px;
+  min-height: 400px; /* <-- Altura fija agregada */
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .auth-form {
