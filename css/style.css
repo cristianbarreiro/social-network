@@ -14,6 +14,7 @@
   --error-color: #e74c3c;
   --success-color: #2ecc71;
   --header-color: hsl(228, 71%, 10%);
+  --white-color: #ffebee;
 }
 
 /* ------------------------- */
@@ -27,7 +28,7 @@
 }
 
 body {
-  background: #f0f8ea; /* Sobrescribe background-color original */
+  background: var(--background-color);
   color: var(--text-color);
   font-family: "Quicksand", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -38,17 +39,17 @@ body {
 /* ------------------------- */
 
 .index-container {
-  margin-top: 125px; /* Ajusta según la altura real de tu navbar */
+  margin-top: 125px;
   display: flex;
-  flex-direction: row; /* fila en vez de columna */
-  align-items: flex-start; /* alinea arriba */
-  justify-content: center; /* centra horizontalmente */
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
   gap: 20px; /* espacio entre cajas */
   flex-wrap: wrap; /* para que baje a otra línea si no entra */
 }
 
 .register-container {
-  margin-top: 46px; /* Ajusta según necesidad */
+  margin-top: 46px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,7 +85,7 @@ header::after {
 }
 
 i {
-  transform: translateY(1.8px); /* ajustá según tu necesidad */
+  transform: translateY(1.8px);
 }
 
 .logo {
@@ -151,8 +152,6 @@ i {
   display: inline-block;
 }
 
-
-
 .main-nav a {
   color: white;
   display: block;
@@ -213,7 +212,7 @@ i {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
   width: 400px;
-  min-height: 400px; /* <-- Altura fija agregada */
+  min-height: 400px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -389,11 +388,11 @@ i {
 
 .what-is {
   width: 250px;
-  height: 250px; /* Asegúrate de tener una altura definida */
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto; /* Centra horizontalmente el contenedor si es necesario */
+  margin: 0 auto;
 }
 
 .about-faq {
@@ -425,7 +424,7 @@ i {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: auto auto 85px auto; /* Ajusta el margen superior según la altura de tu navbar */
+  margin: auto auto 85px auto;
   padding-top: 50px;
 }
 
@@ -456,4 +455,80 @@ h2 {
 /* Cuando esta activo */
 .faqs .faq.active .head svg {
   transform: rotate(180deg);
+}
+
+/*Prices CSS*/
+.principal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative; /* Añadido para contexto de posicionamiento */
+}
+
+.prices-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  width: 75%;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  scroll-margin-top: 125px; /* Para que al hacer scroll, el contenedor quede visible debajo del header */
+  position: absolute; /* Hace que se posicione respecto a principal-container */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: none; /* Elimina el translateY para evitar que se salga */
+}
+
+/* Ancho predeterminado para todos los divs hijos directos de prices-container */
+.prices-container > div {
+  min-height: 420px;
+  min-width: 320px;
+  border-radius: 12px;
+}
+
+.divisor1 {
+  grid-row: span 3 / span 3;
+  grid-row-start: 2;
+  background-color: white;
+}
+
+.divisor2 {
+  grid-row: span 3 / span 3;
+  grid-column-start: 3;
+  grid-row-start: 2;
+  background-color: white;
+}
+
+.divisor3 {
+  grid-row: span 3 / span 3;
+  grid-column-start: 5;
+  grid-row-start: 2;
+  background-color: white;
+}
+
+/* Config Container */
+
+.config-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  background-color: red;
+  width: 100vw;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+.divisor-config {
+  grid-column: span 3 / span 3;
+  grid-row: span 4 / span 4;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  background-color: blue;
 }

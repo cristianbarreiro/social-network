@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const style = document.createElement("style");
   style.textContent = `
     .main-nav a:hover {
-      border-color: var(--border-color); /* Definí --border-color en tu CSS */
+      border-color: var(--border-color);
     }
     .main-nav a:hover .nav-icon {
       color: var(--border-color);
