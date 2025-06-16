@@ -19,6 +19,7 @@
 /* ------------------------- */
 /*        BASE RESET        */
 /* ------------------------- */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,6 +36,7 @@ body {
 /* ------------------------- */
 /*         CONTAINER        */
 /* ------------------------- */
+
 .index-container {
   margin-top: 125px; /* Ajusta según la altura real de tu navbar */
   display: flex;
@@ -149,39 +151,7 @@ i {
   display: inline-block;
 }
 
-.text-label {
-  display: inline-block;
-  opacity: 0;
-  max-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: opacity 0.5s ease-out, max-width 0.5s ease-out,
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-/* Mostrar al hacer hover o si el enlace tiene clase active */
-.config-link:hover .text-label,
-.config-link.active .text-label {
-  opacity: 1;
-  max-width: 200px;
-}
-
-.main-nav li:last-child a::after {
-  content: "Configuration";
-  opacity: 0;
-  max-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: opacity 0.3s ease, max-width 0.3s ease;
-  color: inherit;
-}
-
-/* Mostrar texto en hover o si tiene clase active */
-.main-nav li:last-child a:hover::after,
-.main-nav li:last-child a.active::after {
-  opacity: 1;
-  max-width: 200px; /* suficientemente grande para contener el texto */
-}
 
 .main-nav a {
   color: white;
@@ -418,8 +388,8 @@ i {
 }
 
 .what-is {
-  width: 300px;
-  height: 300px; /* Asegúrate de tener una altura definida */
+  width: 250px;
+  height: 250px; /* Asegúrate de tener una altura definida */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -429,7 +399,7 @@ i {
 .about-faq {
   justify-content: center;
   text-align: center;
-  margin: 50px auto;
+  margin: 10px auto;
 }
 
 .about-faq i {
