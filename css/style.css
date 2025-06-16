@@ -383,3 +383,60 @@ i {
   border-radius: 4px;
   color: var(--error-color);
 }
+
+/* ABOUT PAGE */
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.div7 {
+  grid-column: span 3 / span 3;
+  grid-row: span 5 / span 5;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  background-color: transparent;
+}
+
+.div7 h1 {
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 200px 45px 0 45px; /* Agrega un pequeño margin-top */
+}
+
+.about-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  max-width: 300px; /* Ajusta el tamaño máximo de la imagen */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: transparent;
+}
+
+.about-img__info {
+  width: 100%;
+}
+
+.div8 {
+  grid-row: span 5 / span 5;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  background-color: transparent;
+}
+
+.div9 {
+  grid-row: span 5 / span 5;
+  grid-column-start: 5;
+  background-color: transparent;
+}
