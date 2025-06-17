@@ -1,0 +1,132 @@
+/*Prices CSS*/
+.principal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative; /* Añadido para contexto de posicionamiento */
+}
+
+.prices-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  width: 75%;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  scroll-margin-top: 125px; /* Para que al hacer scroll, el contenedor quede visible debajo del header */
+  position: absolute; /* Hace que se posicione respecto a principal-container */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: none; /* Elimina el translateY para evitar que se salga */
+}
+
+/* Ancho predeterminado para todos los divs hijos directos de prices-container */
+.prices-container > div {
+  min-height: 420px;
+  min-width: 320px;
+  border-radius: 8px;
+  -moz-box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.1);
+  -webkit-box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.1);
+  box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.1);
+  border-top: 8px solid var(--header-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prices-container > div > p {
+  margin: 16px 0;
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  text-align: center;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.divisor1 {
+  grid-row: span 3 / span 3;
+  grid-row-start: 2;
+  background-color: white;
+}
+
+.divisor2 {
+  grid-row: span 3 / span 3;
+  grid-column-start: 3;
+  grid-row-start: 2;
+  background-color: white;
+}
+
+.divisor3 {
+  grid-row: span 3 / span 3;
+  grid-column-start: 5;
+  grid-row-start: 2;
+  background-color: white;
+}
+
+.plan-features {
+  list-style: none;
+}
+
+/* ------------------------- */
+/*         BUTTONS          */
+/* ------------------------- */
+.btn-prices {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5468ff 0,
+    #0b1139 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+  margin: 25px;
+}
+
+.btn-prices:focus {
+  box-shadow: hsl(228, 71%, 10%) 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    hsl(228, 71%, 10%) 0 -3px 0 inset;
+}
+
+.btn-prices:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, hsl(228, 71%, 10%) 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.btn-prices:active {
+  box-shadow: hsl(228, 71%, 10%) 0 3px 7px inset;
+  transform: translateY(2px);
+}
