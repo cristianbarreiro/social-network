@@ -216,6 +216,9 @@ i {
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  -moz-box-shadow: -1px 6px 14px 2px rgba(113, 113, 113, 0.51);
+  -webkit-box-shadow: -1px 6px 14px 2px rgba(113, 113, 113, 0.51);
+  box-shadow: -1px 6px 14px 2px rgba(113, 113, 113, 0.51);
 }
 
 .auth-form {
@@ -491,6 +494,9 @@ h2 {
   min-height: 420px;
   min-width: 320px;
   border-radius: 12px;
+  -moz-box-shadow: -1px 6px 14px 2px rgba(113, 113, 113, 0.51);
+  -webkit-box-shadow: -1px 6px 14px 2px rgba(113, 113, 113, 0.51);
+  box-shadow: -1px 6px 14px 2px rgba(113, 113, 113, 0.51);
 }
 
 .divisor1 {

@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navbarPlaceholder.innerHTML = navbarHTML;
 
-  // Modal functionality
   const supportLink = document.getElementById("support-link");
   const modal = document.getElementById("support-modal");
   const closeModal = modal.querySelector(".close-modal");
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   supportLink.addEventListener("click", function (e) {
     e.preventDefault();
     modal.style.display = "block";
-    // Focus for accessibility
+
     modal.querySelector(".modal-content").focus();
   });
 
@@ -48,14 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.style.display = "none";
   });
 
-  // Only close modal if click is outside modal-content
   modal.addEventListener("click", function (e) {
     if (e.target === modal) {
       modal.style.display = "none";
     }
   });
 
-  // Estilo CSS dinámico
   const style = document.createElement("style");
   style.textContent = `
     .main-nav a:hover {
@@ -78,7 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
       background: #fff;
       padding: 2rem;
       border-radius: 8px;
-      min-width: 300px;
+      min-width: 400px;
+      min-height: 400px
       max-width: 90vw;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
       position: absolute;
@@ -144,4 +142,42 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// ...el resto de tu código permanece igual
+document.addEventListener("DOMContentLoaded", function () {
+  // ... tu código existente
+
+  // Agregar comportamiento para text-label
+  const textLabels = document.querySelectorAll(".text-label");
+
+  textLabels.forEach((label) => {
+    label.textContent = "Configuration";
+    label.style.opacity = "0";
+    label.style.maxWidth = "0";
+    label.style.overflow = "hidden";
+    label.style.whiteSpace = "nowrap";
+    label.style.transition = "opacity 0.3s ease, max-width 0.3s ease";
+    label.style.display = "inline-block";
+
+    const parentLink = label.closest("a");
+
+    const showLabel = () => {
+      label.style.opacity = "1";
+      label.style.maxWidth = "200px";
+    };
+
+    const hideLabel = () => {
+      if (!parentLink.classList.contains("active")) {
+        label.style.opacity = "0";
+        label.style.maxWidth = "0";
+      }
+    };
+
+    // Mostrar en hover
+    parentLink.addEventListener("mouseenter", showLabel);
+    parentLink.addEventListener("mouseleave", hideLabel);
+
+    // Mostrar si ya tiene la clase active
+    if (parentLink.classList.contains("active")) {
+      showLabel();
+    }
+  });
+});
