@@ -5,7 +5,7 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 8px;
-  background-color: red;
+  background-color: var(--background-color);
   width: 100vw;
   height: 100vh; /* Ocupa toda la altura de la ventana */
 }
@@ -14,8 +14,8 @@
   grid-column: span 3 / span 3;
   grid-row: span 4 / span 4;
   grid-column-start: 2;
-  grid-row-start: 1; /* Cambiado de 2 a 1 para subir el divisor */
-  background-color: blue;
+  grid-row-start: 1;
+  background-color: rgba(179, 205, 196, 0.289);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -27,7 +27,26 @@
 .div14 {
   grid-column: span 3 / span 3;
   grid-column-start: 2;
-  background-color: green;
+}
+
+.div14 i {
+  display: inline-block;
+  font-size: 40px;
+  padding: 0 10px 0 10px;
+}
+.div14 i:last-of-type {
+  transform: rotate(120deg);
+}
+
+.div14 h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  font-size: 60px;
+  color: var(--header-color);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .div17 {
