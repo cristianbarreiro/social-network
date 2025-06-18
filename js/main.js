@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     </header>
     <!-- Modal HTML -->
-    <div id="support-modal" class="modal" style="display:none;">
+    <div id="support-modal" class="modal">
       <div class="modal-content" tabindex="0">
-        <span class="close-modal" style="cursor:pointer;float:right;font-size:24px;">&times;</span>
+        <span class="close-modal"></span>
         <h2>Support</h2>
         <p>How can we help you?</p>
       </div>
@@ -76,9 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
       padding: 2rem;
       border-radius: 8px;
       min-width: 400px;
-      min-height: 400px
+      min-height: 400px;
       max-width: 90vw;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.1);
+      -webkit-box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.1);
+      box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.1);
       position: absolute;
       left: 50%;
       top: 50%;
@@ -181,3 +183,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+// ... (resto del código igual)
