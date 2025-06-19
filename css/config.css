@@ -54,5 +54,73 @@
   grid-row: span 4 / span 4;
   grid-column-start: 2;
   grid-row-start: 2;
-  background-color: yellow;
+  background-color: rgba(255, 255, 255, 0.3); /* Amarillo transparente */
+  border: 2px solid #b3cdc4; /* Borde de color suave */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Sombra ligera */
+  border-radius: 12px 12px 0 0; /* Solo bordes redondeados arriba */
+}
+
+.div17 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.div17 ul li {
+  border-bottom: 2px solid #b3cdc4;
+}
+
+/* Opcional: quitar el borde superior del primer li y el inferior del último li */
+.div17 ul li:first-child {
+  border-top: none;
+}
+/* .div17 ul li:last-child {
+  border-bottom: none;
+} */
+
+.config-option a {
+  font-size: 72px;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--option-color, #333); /* color por defecto */
+  background-color: transparent;
+  transition: color 0.2s, background-color 0.2s;
+  border-top: 2px solid #b3cdc4; /* Mantiene el borde superior */
+}
+
+.config-option a:hover {
+  color: var(--option-hover-color, #fff);
+  background-color: var(--option-hover-bg, var(--header-color));
+}
+
+.config-option:first-child a {
+  border-radius: 12px 12px 0 0; /* Solo bordes redondeados arriba */
+  border-top: 2px solid #b3cdc4; /* Asegura el borde superior */
+}
+
+.config-option:first-child a.selected,
+.config-option:first-child a:focus {
+  color: var(--option-selected-color, #fff);
+  background-color: var(--option-selected-bg, var(--secondary-color));
+  border-top: 2px solid #b3cdc4; /* Mantiene el borde superior */
+}
+
+.config-option:first-child a:not(.selected):not(:hover):not(:focus) {
+  color: var(--option-color, #333);
+  background-color: transparent;
+  border-top: 2px solid #b3cdc4; /* Mantiene el borde superior */
+}
+
+.config-option a.selected,
+.config-option a:focus {
+  color: var(--option-selected-color, #fff);
+  background-color: var(--option-selected-bg, var(--secondary-color));
+}
+
+.config-option a:not(.selected):not(:hover):not(:focus) {
+  color: var(--option-color, #333);
+  background-color: transparent;
 }
