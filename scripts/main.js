@@ -25,7 +25,24 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="modal-content" tabindex="0">
         <span class="close-modal"></span>
         <h2>Support</h2>
-        <p>How can we help you?</p>
+        <ul>
+          <li>How do I reset my password?</li>
+          <li>How can I change my profile picture?</li>
+          <li>How do I delete my account?</li>
+          <li>How can I report inappropriate content?</li>
+          <li>How do I block or unblock a user?</li>
+          <li>How do I change my privacy settings?</li>
+          <li>Why can't I log in to my account?</li>
+          <li>How do I contact customer support?</li>
+          <li>How do I upgrade to a premium account?</li>
+          <li>How do I recover a hacked account?</li>
+        </ul>
+        <h5>¿No has podido resolver tu problema? Consulta aquí abajo.</h5>
+        <hr>
+        <div class="container">
+            <h1>Asistente Virtual Gemini</h1>
+            <iframe src="http://localhost:7860" title="Chatbot Gemini" allow="clipboard-read; clipboard-write;"></iframe>
+        </div>
       </div>
     </div>
   `;
