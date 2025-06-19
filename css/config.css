@@ -54,7 +54,7 @@
   grid-row: span 4 / span 4;
   grid-column-start: 2;
   grid-row-start: 2;
-  background-color: rgba(255, 255, 255, 0.3); /* Amarillo transparente */
+  background-color: white; /* Amarillo transparente */
   border: 2px solid #b3cdc4; /* Borde de color suave */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Sombra ligera */
   border-radius: 12px 12px 0 0; /* Solo bordes redondeados arriba */
