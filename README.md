@@ -1,15 +1,34 @@
 # 🤖 Chatbot con Gemini y Gradio (Modo Claro)
 
-Este proyecto es una interfaz web simple construida con [Gradio](https://gradio.app/) que permite interactuar con el modelo **Gemini 1.5 Flash** de Google. Utiliza `google-generativeai`, `gradio`, y `dotenv` para gestionar claves y crear una experiencia moderna en modo claro.
+Este proyecto es una interfaz web simple construida con [Gradio](https://gradio.app/) que permite interactuar con el modelo **Gemini 1.5 Flash** de Google. Utiliza `google-generativeai`, `gradio` y `dotenv` para gestionar claves de forma segura y crear una experiencia moderna en modo claro.
 
 ---
 
 ## 🧠 ¿Qué hace este proyecto?
 
-- Permite ingresar preguntas en una interfaz web.
-- Envía la consulta a Gemini (Google Generative AI).
-- Muestra la respuesta generada por el modelo.
-- Diseñado con una interfaz clara y adaptable para `iframe`.
+- Permite ingresar preguntas a través de una interfaz web intuitiva.
+- Envía la consulta al modelo Gemini (Google Generative AI).
+- Muestra la respuesta generada en pantalla.
+- Totalmente diseñado en **modo claro**, ideal para integrarse fácilmente como `iframe` en otros proyectos web.
+
+---
+
+## 📂 Proyecto complementario: Red Social "GenericLogo"
+
+Junto a este chatbot, se está desarrollando una **red social experimental llamada "GenericLogo"** usando **HTML, CSS y JavaScript puro**.  
+Este frontend tiene como objetivo:
+
+- Simular una red social básica con diseño adaptable.
+- Servir como entorno de pruebas para futuras integraciones con APIs.
+- Evaluar cómo se comporta una interfaz real conectada al chatbot Gemini.
+
+Próximamente se planea **conectar esta red social a una API** utilizando JavaScript para ofrecer funcionalidades dinámicas como:
+
+- Registro y login de usuarios
+- Publicación de contenido
+- Respuestas inteligentes generadas por IA (como el chatbot actual)
+
+Este enfoque permite un desarrollo progresivo y didáctico del ecosistema web + IA.
 
 ---
 
@@ -22,10 +41,6 @@ Este proyecto es una interfaz web simple construida con [Gradio](https://gradio.
 
 ## ⚙️ Instalación
 
-1. **Clona el repositorio**
-   ```bash
-   git clone https://github.com/tu-usuario/chatbot-gemini-gradio.git
-   cd chatbot-gemini-gradio
 Crea y activa un entorno virtual
 
 bash
@@ -40,17 +55,24 @@ bash
 Copiar
 Editar
 pip install -r requirements.txt
-Crea un archivo .env y agrega tu clave
+Crea un archivo .env y agrega tu clave API
 
-env
+ini
 Copiar
 Editar
 GEMINI_API_KEY=tu_clave_api_aqui
 🚀 Ejecutar la app
-Una vez configurado todo:
+Una vez todo esté configurado, puedes lanzar la aplicación con:
 
 bash
 Copiar
 Editar
 python app.py
-La app se abrirá en http://localhost:7860
+Esto abrirá una interfaz web donde podrás escribir preguntas y ver las respuestas de Gemini en tiempo real.
+
+
+1. **Clona el repositorio**
+   ```bash
+   git clone https://github.com/tu-usuario/chatbot-gemini-gradio.git
+   cd chatbot-gemini-gradio
+
