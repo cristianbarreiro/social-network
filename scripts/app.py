@@ -27,13 +27,12 @@ body, .gradio-container {
     background-color: #f4f6f9;
     color: #111;
     font-family: 'Segoe UI', sans-serif;
-    padding: 8px 12px; /* Pequeño padding para no pegar a los bordes */
+    padding: 8px 12px;
     margin: 0;
-    width: 100vw !important;
-    min-width: 100vw !important;
-    max-width: 100vw !important;
+    width: 400px !important;
+    min-width: 400px !important;
+    max-width: 400px !important;
     box-sizing: border-box;
-
 }
 
 footer {
@@ -46,8 +45,8 @@ textarea, input[type="text"] {
     color: #111 !important;
     border: 1px solid #ccc !important;
     border-radius: 8px !important;
-    padding: 10px !important;
-    font-size: 1rem !important;
+    padding: 8px !important;
+    font-size: 0.95rem !important;
     box-shadow: none !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -56,13 +55,13 @@ textarea, input[type="text"] {
 
 /* Botón Enviar */
 button {
-    background-color: #4CAF50 !important; /* Verde claro */
+    background-color: #4CAF50 !important;
     color: white !important;
     font-weight: bold !important;
     border: none !important;
     border-radius: 6px !important;
-    padding: 10px 20px !important;
-    font-size: 1rem !important;
+    padding: 8px 16px !important;
+    font-size: 0.95rem !important;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100% !important;
@@ -88,7 +87,7 @@ button:hover {
 
 /* Textbox azul marino */
 textarea, input[type="text"] {
-    background-color: #0a2342 !important; /* Azul marino */
+    background-color: #0a2342 !important;
     color: #fff !important;
     border: 1px solid #0a2342 !important;
 }
@@ -131,6 +130,6 @@ if __name__ == "__main__":
     app.launch(
         server_name="0.0.0.0",
         server_port=7860,
-        share=False,
+        share=True,
         show_error=True
     )

@@ -360,23 +360,22 @@ i {
   color: var(--error-color);
 }
 
-.modal {
-  display: none;
-}
-
 .close-modal {
   cursor: pointer;
   position: absolute;
-  top: 16px;
-  right: 16px;
   width: 24px;
   height: 24px;
   background: transparent;
   border: none;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* display: contents;  Elimina el box/hitbox visual, pero mantiene los pseudoelementos visibles */
+  /* pointer-events: none;  Hace que el botón no reciba eventos */
+  top: 16px; /* Ajusta la posición vertical */
+  right: 16px; /* Ajusta la posición horizontal */
+  transform: translate(
+    0,
+    0
+  ); /* Puedes modificar estos valores para mover la X donde quieras */
 }
 
 /* Línea cruzada 1 */
@@ -390,6 +389,7 @@ i {
   height: 2px;
   background-color: #000;
   transition: opacity 0.3s ease;
+  pointer-events: auto; /* Permite que los pseudoelementos reciban clics */
 }
 
 /* Rotar para formar la X */
@@ -404,6 +404,10 @@ i {
 .close-modal:hover::after,
 .close-modal:hover::before {
   opacity: 0.3;
+}
+
+.modal-faq {
+  margin-bottom: 48px;
 }
 
 /* ------------------------- */

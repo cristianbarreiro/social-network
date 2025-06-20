@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
     <div id="support-modal" class="modal">
       <div class="modal-content" tabindex="0">
         <span class="close-modal"></span>
-        <h2>Support</h2>
-        <ul>
+        <h2 id="faq-title">Support</h2>
+        <ul class="modal-faq" id="faq-list">
           <li>How do I reset my password?</li>
           <li>How can I change my profile picture?</li>
           <li>How do I delete my account?</li>
@@ -37,12 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
           <li>How do I upgrade to a premium account?</li>
           <li>How do I recover a hacked account?</li>
         </ul>
-        <h5>¿No has podido resolver tu problema? Consulta aquí abajo.</h5>
-        <hr>
-        <div class="container">
+        
+        <div class="container" id="asistente-container">
             <h1>Asistente Virtual Gemini</h1>
-            <iframe src="http://localhost:7860" title="Chatbot Gemini" allow="clipboard-read; clipboard-write;"></iframe>
+            <iframe src="https://1f78a2bb7397b921a7.gradio.live" title="Chatbot Gemini" allow="clipboard-read; clipboard-write;"></iframe>
         </div>
+
+        <h5 >¿No has podido resolver tu problema? Consulta aquí abajo. <a href="#" id="mostrar-asistente">Click aquí</a></h5>
+        <hr>
       </div>
     </div>
   `;
@@ -105,8 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
       z-index: 1001;
       pointer-events: auto;
       max-height: 80vh;
-      overflow: auto;
+      overflow: hidden;
       cursor: pointer;
+      scrollbar-width: none; /* Firefox */
+    }
+    .modal-content::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
     }
   `;
   document.head.appendChild(style);
@@ -201,3 +207,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 // ... (resto del código igual)
+
+/* Manejo de mostrar asistente */
+
+// Mover el manejo del asistente dentro del DOMContentLoaded para asegurar que el elemento existe
+document.addEventListener("DOMContentLoaded", function () {
+  const asistenteContainer = document.getElementById("asistente-container");
+  const mostrarAsistente = document.getElementById("mostrar-asistente");
+  const faqList = document.getElementById("faq-list");
+  const faqTitle = document.getElementById("faq-title");
+  if (asistenteContainer && mostrarAsistente) {
+    asistenteContainer.style.display = "none";
+    mostrarAsistente.addEventListener("click", function (event) {
+      event.preventDefault(); // Previene que salte al tope
+      const isVisible = asistenteContainer.style.display === "block";
+      if (isVisible) {
+        asistenteContainer.style.display = "none";
+        faqList.style.display = "block";
+        faqTitle.style.display = "block";
+      } else {
+        asistenteContainer.style.display = "block";
+        faqList.style.display = "none";
+        faqTitle.style.display = "none";
+      }
+    });
+  }
+});
