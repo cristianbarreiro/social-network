@@ -36,17 +36,6 @@
   margin: 0 auto;
 }
 
-.about-faq {
-  justify-content: center;
-  text-align: center;
-  margin: 10px auto;
-}
-
-.about-faq i {
-  color: rgb(33, 32, 32);
-  transform: translateY(2.75px);
-}
-
 .div8 {
   grid-row: span 5 / span 5;
   grid-column-start: 1;
@@ -60,40 +49,96 @@
   background-color: transparent;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/*Section used for centering process*/
+section {
   width: 100%;
-  margin: auto auto 85px auto;
-  padding-top: 50px;
-}
-
-.faqs .faq .head {
+  height: 100vh;
+  background-color: transparent;
   display: flex;
-  padding: 25px 0px;
-  justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+  justify-content: center;
 }
 
-h2 {
-  font-family: "Fahkwang", sans-serif;
+.container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.faqs .faq .head svg {
-  transition: transform 0.25s ease-in;
+.accordion-item {
+  background-color: transparent;
+  border-radius: 0.4rem;
 }
 
-.faqs .faq .content {
-  height: 0px;
-  overflow-y: hidden;
-  transition: height 0.25s ease-in;
-  border-bottom: 1px solid #afafaf;
-  font-weight: 400;
+.accordion-item hr {
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Cuando esta activo */
-.faqs .faq.active .head svg {
-  transform: rotate(180deg);
+.accordion-link {
+  font-size: 1.6rem;
+  text-decoration: none;
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.accordion-link h3 {
+  font-weight: 500;
+  font-size: 20px;
+  color: black;
+}
+
+.accordion-link i {
+  padding: 0.5rem;
+}
+
+.accordion-link ul {
+  display: flex;
+  align-items: flex-end;
+  list-style-type: none;
+  margin-left: 25px;
+}
+
+.accordion-link li {
+  font-size: 10px;
+  padding: 0 0 1px 5px;
+  color: black;
+}
+
+.accordion-link div {
+  display: flex;
+}
+
+.accordion-link .ion-md-arrow-down {
+  display: none;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+  transition: max-height 650ms;
+}
+
+.answer p {
+  color: #000000;
+  font-size: 15px;
+  padding: 2rem;
+}
+
+.accordion-item:target .answer {
+  max-height: 20rem;
+}
+
+.accordion-item:target .accordion-link .ion-md-arrow-forward {
+  display: none;
+}
+
+.accordion-item:target .accordion-link .ion-md-arrow-down {
+  display: block;
 }

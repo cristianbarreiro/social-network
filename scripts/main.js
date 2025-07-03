@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       left: 0; top: 0; width: 100vw; height: 100vh;
       /* No background, so page remains usable */
       pointer-events: none;
+      display:none;
     }
     .modal[style*="display: block"] {
       pointer-events: none;
