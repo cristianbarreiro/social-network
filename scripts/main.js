@@ -247,3 +247,94 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+const registerForm = document.getElementById("registerForm");
+if (registerForm) {
+  registerForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+      alert("Las contraseñas no coinciden");
+      return;
+    }
+
+    const query = `
+      mutation {
+        addPerson(name: "${name}", mail: "${email}", password: "${password}") {
+          id
+          name
+        }
+      }
+    `;
+
+    try {
+      const response = await fetch("http://localhost:4000/graphql", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query }),
+      });
+
+      const result = await response.json();
+      if (result.data && result.data.addPerson) {
+        alert("Usuario registrado correctamente");
+        window.location.href = "index.html";
+      } else {
+        alert("Error al registrar: " + result.errors[0].message);
+      }
+    } catch (error) {
+      alert("Error de red");
+      console.error(error);
+    }
+  });
+}
+
+const loginForm = document.getElementById("loginForm");
+if (loginForm) {
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    const query = `
+      query {
+        login(mail: "${email}", password: "${password}") {
+          id
+          name
+          mail
+        }
+      }
+    `;
+
+    try {
+      const response = await fetch("http://localhost:4000/graphql", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query }),
+      });
+
+      const result = await response.json();
+      const user = result.data.login;
+
+      if (user) {
+        alert("Bienvenido, " + user.name);
+        localStorage.setItem("user", JSON.stringify(user));
+        window.location.href = "feed.html"; // 👈 redirección corregida
+      } else {
+        alert("Credenciales inválidas");
+      }
+    } catch (error) {
+      alert("Error de red");
+      console.error(error);
+    }
+  });
+}
